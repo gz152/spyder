@@ -17,11 +17,7 @@ sys.setdefaultencoding("utf-8")
 
 # A function that help to get the positionID or the detail of jobs
 def get_page(url, head, data = None):
-    if data is None:
-        page = requests.post(url = url, headers = head)
-    else:
-        page = requests.post(url = url, headers = head, data = data)
-
+    page = requests.post(url = url, headers = head, data = data)
     return page
 
 def get_positionID(url, head):
