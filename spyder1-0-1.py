@@ -20,6 +20,7 @@ def get_page(url, head, data = None):
     page = requests.post(url = url, headers = head, data = data)
     return page
 
+# we need to get the positionID first
 def get_positionID(url, head):
     for page_no in xrange(1,21):
         page_data = {
@@ -35,6 +36,7 @@ def get_positionID(url, head):
         for each in page_json:
             yield each['positionId']
 
+# 目前主要获取任职资格和工作内容两个方面的内容
 def get_jobsinfo(url, head):
     url2 = "http://www.lagou.com/jobs/"
     with open("result3",'a') as file:
